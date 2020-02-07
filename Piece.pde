@@ -12,7 +12,7 @@ final int
   Pshapes 
  */
 PShape pawn_black, pawn_white, bishop_black, bishop_white, king_black, king_white, knight_black, knight_white, queen_black, queen_white, rook_black, rook_white;
-boolean whiteKingMoved=false,blackKingMoved=false,blackLongRookMoved=false,blackShortRookMoved=false,whiteLongRookMoved=false,whiteShortRookMoved=false;
+boolean whiteKingMoved=false, blackKingMoved=false, blackLongRookMoved=false, blackShortRookMoved=false, whiteLongRookMoved=false, whiteShortRookMoved=false;
 class Piece
 {
   Piece()
@@ -48,6 +48,12 @@ void loadShapes()
 }
 void setField()
 {
+  whiteKingMoved=false; 
+  blackKingMoved=false; 
+  blackLongRookMoved=false; 
+  blackShortRookMoved=false; 
+  whiteLongRookMoved=false; 
+  whiteShortRookMoved=false;
   Selected=false;
   for (int i=1; i<=8; i++)
   {

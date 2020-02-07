@@ -288,8 +288,42 @@ void kingValid(int i, int j )
   }
   if (Field[i][j].colour==WHITE)
   {
+    if(!whiteKingMoved)
+    {
+      if(!whiteShortRookMoved)
+      {
+        if(Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
+        {
+          Field[i][j+2].highlighted=true;
+        }
+      }
+      if(!whiteLongRookMoved)
+      {
+        if(Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
+        {
+          Field[i][j-3].highlighted=true;
+        }
+      }
+    }
   } else
   {
+    if(!blackKingMoved)
+    {
+      if(!blackShortRookMoved)
+      {
+        if(Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
+        {
+          Field[i][j+2].highlighted=true;
+        }
+      }
+      if(!blackLongRookMoved)
+      {
+        if(Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
+        {
+          Field[i][j-3].highlighted=true;
+        }
+      }
+    }
   }
 }
 void valid(int i, int j)

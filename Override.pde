@@ -48,13 +48,47 @@ void mousePressed()
                   blackKingMoved=true;
                 }
               }
+              if(tempJ+2==j)
+              {
+                Field[i][8].type=FREE;
+                Field[i][8].colour=FREE;
+                Field[i][6].type=ROOK;
+                Field[i][6].colour=Field[tempI][tempJ].colour;
+              }
+              if(tempJ-3==j)
+              {
+                Field[i][1].type=FREE;
+                Field[i][1].colour=FREE;
+                Field[i][3].type=ROOK;
+                Field[i][3].colour=Field[tempI][tempJ].colour;
+              }
             }
             if (Field[tempI][tempJ].type==ROOK)
             {
               if (Field[tempI][tempJ].colour==WHITE)
               {
+                if (i!=tempI||j!=tempJ)
+                {
+                  if (tempJ==1)
+                  {
+                    whiteLongRookMoved=true;
+                  } else if (tempJ==8)
+                  {
+                    whiteShortRookMoved=true;
+                  }
+                }
               } else
               {
+                if (i!=tempI||j!=tempJ)
+                {
+                  if (tempJ==1)
+                  {
+                    blackLongRookMoved=true;
+                  } else if (tempJ==8)
+                  {
+                    blackShortRookMoved=true;
+                  }
+                }
               }
             }
             Field[tempI][tempJ].type=FREE;
@@ -63,7 +97,6 @@ void mousePressed()
             Field[i][j].colour=Temp.colour;
             Selected=!Selected;
             resetHighlight();
-            
           }
         }
       }
