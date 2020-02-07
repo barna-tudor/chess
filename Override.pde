@@ -33,12 +33,37 @@ void mousePressed()
         {
           if (Field[i][j].highlighted)
           {
+            if (Field[tempI][tempJ].type==KING)
+            {
+              if (Field[tempI][tempJ].colour==WHITE)
+              {
+                if (i!=tempI||j!=tempJ)
+                {
+                  whiteKingMoved=true;
+                }
+              } else
+              {
+                if (i!=tempI||j!=tempJ)
+                {
+                  blackKingMoved=true;
+                }
+              }
+            }
+            if (Field[tempI][tempJ].type==ROOK)
+            {
+              if (Field[tempI][tempJ].colour==WHITE)
+              {
+              } else
+              {
+              }
+            }
             Field[tempI][tempJ].type=FREE;
             Field[tempI][tempJ].colour=FREE;
             Field[i][j].type=Temp.type;
             Field[i][j].colour=Temp.colour;
             Selected=!Selected;
             resetHighlight();
+            
           }
         }
       }

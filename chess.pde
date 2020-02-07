@@ -2,7 +2,7 @@
 boolean negru=true;
 void setup()
 {
-  size(800, 800);
+  size(900, 800);
   textSize(32);
   textAlign(LEFT, TOP);
   shapeMode(CORNER);
@@ -12,9 +12,10 @@ void setup()
 }
 void draw()
 {
-  background(127);
+  background(0);
   for (int i=1; i<=8; i++)
   {
+    
     negru=!negru;
     for (int j=1; j<=8; j++)
     {
@@ -26,24 +27,31 @@ void draw()
       }
       negru=!negru;
       rect((j-1)*100, (i-1)*100, 100, 100);
-    }
-  }
-  for (int i=1; i<=8; i++)
-  {
-    for (int j=1; j<=8; j++)
-    {//text(Field[i][j].type*Field[i][j].colour, (j-1)*100, (i-1)*100);
       if (Field[i][j].highlighted)
       {
         if (Field[i][j].colour*Field[tempI][tempJ].colour<0)
         {
-          fill(255, 0, 0, 60);
-          stroke(234, 9, 9);
+          if (!negru)
+          {
+            fill(255, 0, 0, 60);
+            stroke(234, 9, 9);
+          } else
+          {
+            fill(127, 0, 0, 120);
+            stroke(127, 0, 0);
+          }
         } else
         {
-          fill(17, 242, 2, 40);
-          stroke(17, 242, 2);
+          if (!negru)
+          {
+            fill(17, 242, 2, 40);
+            stroke(17, 242, 2);
+          } else {
+            fill(18, 182, 4, 127);
+            stroke(18, 182, 4);
+          }
         }
-        rect((j-1)*100+1, (i-1)*100+1, 98, 98);
+        rect((j-1)*100+4, (i-1)*100+4, 92, 92);
         fill(0);
         stroke(0);
       }
@@ -97,5 +105,4 @@ void draw()
       }
     }
   }
-  //println(mouseX+" "+mouseY);
 }

@@ -1,34 +1,18 @@
 Piece[][] Field=new Piece[9][9];
+int[] di={-2, -1, +1, +2, +2, +1, -1, -2};
+int[] dj={+1, +2, +2, +1, -1, -2, -2, -1};
 /*
 Finals
  */
 final int
-  FREE=0, 
-  PAWN=1, 
-  ROOK=2, 
-  KNIGHT=3, 
-  BISHOP=4, 
-  QUEEN=5, 
-  KING=6;
+  FREE=0, PAWN=1, ROOK=2, KNIGHT=3, BISHOP=4, QUEEN=5, KING=6;
 final int
-  BLACK=-1, 
-  WHITE=1;
+  BLACK=-1, WHITE=1;
 /*
   Pshapes 
  */
-PShape 
-  pawn_black, 
-  pawn_white, 
-  bishop_black, 
-  bishop_white, 
-  king_black, 
-  king_white, 
-  knight_black, 
-  knight_white, 
-  queen_black, 
-  queen_white, 
-  rook_black, 
-  rook_white;
+PShape pawn_black, pawn_white, bishop_black, bishop_white, king_black, king_white, knight_black, knight_white, queen_black, queen_white, rook_black, rook_white;
+boolean whiteKingMoved=false,blackKingMoved=false,blackLongRookMoved=false,blackShortRookMoved=false,whiteLongRookMoved=false,whiteShortRookMoved=false;
 class Piece
 {
   Piece()
@@ -49,18 +33,18 @@ class Piece
 }
 void loadShapes()
 {
-  pawn_black=loadShape("pawn_black.svg");
-  pawn_white=loadShape("pawn_white.svg"); 
-  bishop_black=loadShape("bishop_black.svg");
-  bishop_white=loadShape("bishop_white.svg"); 
-  king_black=loadShape("king_black.svg");
-  king_white=loadShape("king_white.svg"); 
-  knight_black=loadShape("knight_black.svg"); 
-  knight_white=loadShape("knight_white.svg"); 
-  queen_black=loadShape("queen_black.svg");
-  queen_white=loadShape("queen_white.svg"); 
-  rook_black=loadShape("rook_black.svg");
-  rook_white=loadShape("rook_white.svg");
+  pawn_black=loadShape("bp.svg");
+  pawn_white=loadShape("wp.svg"); 
+  bishop_black=loadShape("bb.svg");
+  bishop_white=loadShape("wb.svg"); 
+  king_black=loadShape("bk.svg");
+  king_white=loadShape("wk.svg"); 
+  knight_black=loadShape("bn.svg"); 
+  knight_white=loadShape("wn.svg"); 
+  queen_black=loadShape("bq.svg");
+  queen_white=loadShape("wq.svg"); 
+  rook_black=loadShape("br.svg");
+  rook_white=loadShape("wr.svg");
 }
 void setField()
 {
