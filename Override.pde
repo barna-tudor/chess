@@ -170,9 +170,12 @@ void mousePressed()
       {
         if (pawnColor==WHITE)
         {
+          Field[1][pawnJ].type=QUEEN;
           Field[1][pawnJ].colour=WHITE;
         } else
         {
+          Field[8][pawnJ].type=QUEEN;
+          Field[8][pawnJ].colour=BLACK;
         }
       }
       playing=true;

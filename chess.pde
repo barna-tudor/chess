@@ -15,9 +15,24 @@ void draw()
   if (playing)
   {
     background(0);
+    if (Field[1][1].colour!=BLACK)
+    {
+      blackLongRookMoved=true;
+    }
+    if (Field[1][8].colour!=BLACK)
+    {
+      blackShortRookMoved=true;
+    }
+    if (Field[8][1].colour!=WHITE)
+    {
+      whiteLongRookMoved=true;
+    }
+    if (Field[8][8].colour!=WHITE)
+    {
+      whiteShortRookMoved=true;
+    }
     for (int i=1; i<=8; i++)
     {
-
       negru=!negru;
       for (int j=1; j<=8; j++)
       {
