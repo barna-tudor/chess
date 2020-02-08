@@ -288,18 +288,18 @@ void kingValid(int i, int j )
   }
   if (Field[i][j].colour==WHITE)
   {
-    if(!whiteKingMoved)
+    if (!whiteKingMoved)
     {
-      if(!whiteShortRookMoved)
+      if (!whiteShortRookMoved)
       {
-        if(Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
+        if (Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
         {
           Field[i][j+2].highlighted=true;
         }
       }
-      if(!whiteLongRookMoved)
+      if (!whiteLongRookMoved)
       {
-        if(Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
+        if (Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
         {
           Field[i][j-3].highlighted=true;
         }
@@ -307,18 +307,18 @@ void kingValid(int i, int j )
     }
   } else
   {
-    if(!blackKingMoved)
+    if (!blackKingMoved)
     {
-      if(!blackShortRookMoved)
+      if (!blackShortRookMoved)
       {
-        if(Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
+        if (Field[i][j+1].type==FREE&&Field[i][j+2].type==FREE)
         {
           Field[i][j+2].highlighted=true;
         }
       }
-      if(!blackLongRookMoved)
+      if (!blackLongRookMoved)
       {
-        if(Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
+        if (Field[i][j-1].type==FREE&&Field[i][j-2].type==FREE&&Field[i][j-3].type==FREE)
         {
           Field[i][j-3].highlighted=true;
         }

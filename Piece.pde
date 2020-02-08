@@ -48,6 +48,7 @@ void loadShapes()
 }
 void setField()
 {
+  playing=true;
   whiteKingMoved=false; 
   blackKingMoved=false; 
   blackLongRookMoved=false; 
