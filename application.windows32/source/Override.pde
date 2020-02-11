@@ -178,7 +178,8 @@ void mousePressed()
           Field[8][pawnJ].colour=BLACK;
         }
       }
-      playing=true;
+      if (mouseX>200&&mouseX<600)
+        playing=true;
     }
   }
 }

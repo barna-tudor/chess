@@ -251,7 +251,6 @@ public void draw()
     }
   }
 }
-
 boolean Selected=false;
 boolean playing=true; 
 int pawnColor, pawnJ;
@@ -432,7 +431,8 @@ public void mousePressed()
           Field[8][pawnJ].colour=BLACK;
         }
       }
-      playing=true;
+      if (mouseX>200&&mouseX<600)
+        playing=true;
     }
   }
 }
@@ -443,7 +443,6 @@ public void keyPressed()
     setField();
   }
 }
-
 Piece[][] Field=new Piece[9][9];
 int[] di={-2, -1, +1, +2, +2, +1, -1, -2};
 int[] dj={+1, +2, +2, +1, -1, -2, -2, -1};
@@ -590,7 +589,6 @@ public void resetHighlight()
       Field[i][j].highlighted=false;
     }
 }
-
 public void pawnValid(int i, int j )
 {
 
@@ -944,7 +942,6 @@ public void valid(int i, int j)
     break;
   }
 }
-
   public void settings() {  size(800, 800); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "chess" };
